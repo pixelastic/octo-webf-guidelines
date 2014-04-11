@@ -155,9 +155,9 @@ inutile de l'ajouter.
 ## Configuration
 
 ### Vim
-Put this lines in your `~/.vim/after/ftplugin/html.vim`
+Si vous utilisez vim, vous pouvez ajouter ces lignes à votre `~/.vim/after/ftplugin/html.vim`
 
-    " Use two spaces for indenting
+    " Deux espaces pour l'indentation
     setlocal tabstop=2
     setlocal shiftwidth=2
     setlocal softtabstop=2
