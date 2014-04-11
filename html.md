@@ -11,6 +11,7 @@ Cela permet de visualiser plus facilement la hiérarchie des différents
 éléments.
 
 Exemple :
+
     <ul>
       <li>
         <a href="#">Lien</a>
@@ -35,6 +36,7 @@ On pourra omettre le `/>` seulement pour les balises auto-fermantes qui ne
 comportent pas d'attributs.
 
 Exemples :
+
     <img src="img.jpg /> GOOD
     <img src="img.jpg"> BAD
 
