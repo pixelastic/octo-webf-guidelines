@@ -34,6 +34,9 @@ Le [séparateur](http://blog.codinghorror.com/the-great-newline-schism/) Unix
 (LF) est utilisé par html5boilerplate. Il utilise moins de bytes que le
 séparateur Windows et est plus répandu que le séparateur Mac.
 
+### Ressources
+ - [Configurer Eclipse pour les new lines et les indentations](http://eclipsesource.com/blogs/2013/07/09/invisible-chaos-mastering-white-spaces-in-eclipse/)
+
 
 Todo :
 - nom de classe avec des tirets en css
