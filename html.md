@@ -1,10 +1,6 @@
 # HTML
 
-## Indentation
-
-### Utiliser deux espaces.
-Cela permet de s'assurer d'avoir le même rendu sur tous les postes. C'est aussi
-la configuration utilisée par html5boilerplate.
+## Balises
 
 ### Indenter chaque balise.
 Cela permet de visualiser plus facilement la hiérarchie des différents
@@ -23,32 +19,37 @@ Exemple :
       </li>
     </ul>
 
-## Balises
-
 ### Toujours en minuscule.
 Pour l'uniformité. Seul le `<!DOCTYPE html>` est une exception à la règle.
+
+### Toujours fermer les balises.
+Même si certaines balises comme `<body>`, `<li>`, `<dt>` ou `<dd>` peuvent ne
+pas être fermées, le faire permet de mieux visualiser l'imbrication des
+éléments.
 
 ### Ajouter un `/>` de fermeture pour les self-closing tags.
 Même si ajouter `/>` est facultatif sur ces éléments, l'ajouter démontre bien
 l'intention et non pas qu'on a oublié de fermer un tag.
 
-On pourra omettre le `/>` seulement pour les balises auto-fermantes qui ne
-comportent pas d'attributs.
-
 Exemples :
 
-    <img src="img.jpg /> GOOD
     <img src="img.jpg"> BAD
+    <img src="img.jpg /> GOOD
 
-    <br> GOOD
-    <br /> BAD
+    <br> BAD
+    <br /> GOOD
 
-    <hr> GOOD
-    <hr class="secondary" /> GOOD
+### Utiliser un minimum de balises.
+Tirez profit du fait qu'on puisse ajouter plusieurs classes CSS à un même
+élément pour éviter d'ajouter des balises `<span>` ou `<div>` inutiles.
 
-### Toujours fermer les balises, même si optionnel.  Même si certaines balises
-comme `<body>`, `<li>`, `<dt>` ou `<dd>` peuvent ne pas être fermées, le faire
-permet de mieux visualiser l'imbrication des éléments.
+    NOT SO GOOD
+    <div class="avatar">
+      <img src="img.jpg" />
+    </div>
+
+    BETTER
+    <img src="img.jpg" class="avatar" />
 
 ## Attributs
 
@@ -59,6 +60,18 @@ Pour l'uniformité.
 Cela nous permet d'utiliser des single quotes dans le javascript et de pouvoir
 ainsi écrire du javascript dans un attribut html et du html dans une string
 javascript.
+
+### Ne pas ajouter de valeurs aux attributs de type booleens.
+Il est inutile d'ajouter une valeur aux attributs booléens, leur présence
+signifie `true` et leur absence `false`.
+
+    <input type="text" disabled="disabled" /> BAD
+    <input type="text" disabled /> GOOD
+
+### Questions ouvertes
+_Quid de l'ordre des attributs ? Avoir les attributs toujours dans le même
+ordre aide à la cohérence mais aussi à la compression gzip. Quel ordre
+privilégier ? Alphabétiques ou par type ?_
 
 ## URL
 
@@ -98,14 +111,12 @@ Cela nous permet d'avoir la plus grande cohérence de rendu sur l'ensemble des
 navigateurs.
 
 ### Toujours dire à IE d'utiliser la dernière version de son moteur de rendu.
-L'ajout de la balise suivante indique à IE d'utiliser la dernière version de
-son moteur de rendu. Sans cette balise, il utilisera un fallback de
-compatibilité moins performant.
+L'ajout de la [balise
+suivante](http://stackoverflow.com/questions/6771258/whats-the-difference-if-meta-http-equiv-x-ua-compatible-content-ie-edge-e)
+indique à IE d'utiliser la dernière version de son moteur de rendu. Sans cette
+balise, il utilisera un fallback de compatibilité moins performant.
 
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
-
-Plus d'infos sur cette balise sur
-[StackOverflow](http://stackoverflow.com/questions/6771258/whats-the-difference-if-meta-http-equiv-x-ua-compatible-content-ie-edge-e)
 
 ### Toujours utiliser de l'UTF-8.
 En plus d'avoir les fichiers html encodés en UTF-8 et le serveur qui les envoie
@@ -164,3 +175,17 @@ Si vous utilisez vim, vous pouvez ajouter ces lignes à votre `~/.vim/after/ftpl
     setlocal shiftwidth=2
     setlocal softtabstop=2
     setlocal expandtab
+
+### Outils
+
+Le W3C avait mis à disposition [htmltidy](http://tidy.sourceforge.net/), un
+outil pour tester la syntaxe et nettoyer un fichier `html`. Un fork a depuis vu
+le jour, qui intègre les nouveautés html5 et offre plus de possibilités de
+configuration, [tidy-html5](https://github.com/w3c/tidy-html5).
+
+`tidycheck`, un wrapper en ruby autour de `tidy-html5`, présent dans ce
+repository est une ébauche de script qui affiche les erreurs detectées dans un
+fichier html sans chercher à les corriger.
+
+Le package [js-beautify](https://github.com/einars/js-beautify)  comporte aussi
+un script `html-beautify` qui permet de nettoyer un fichier html.

@@ -1,0 +1,5 @@
+# File used by `tidycheck` to output errors and warnings
+quiet: yes
+show-errors: 100
+show-warnings: yes
+new-blocklevel-tags:ng-include,alert,sec:authentication,c:if
