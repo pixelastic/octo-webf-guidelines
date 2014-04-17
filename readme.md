@@ -37,6 +37,9 @@ séparateur Windows et est plus répandu que le séparateur Mac.
 ### Ne pas laisser d'espaces en fin de ligne.
 Ces caractères sont inutiles.
 
+### Ajouter un saut de ligne en fin de fichier.
+Ou plutot, [ne pas supprimer le saut de
+ligne](http://unix.stackexchange.com/questions/18743/whats-the-point-in-adding-a-new-line-to-the-end-of-a-file)  qui devrait y être.
 
 ## Ressources
 - [GitHub styleguide](https://github.com/styleguide)
