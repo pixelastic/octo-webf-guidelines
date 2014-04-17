@@ -11,6 +11,10 @@ La seule règle capitale est que tous les développeurs doivent suivre les même
 convention. Le code dans son ensemble doit sembler avoir été écrit par la même
 personne.
 
+## Inspirations
+- [GitHub styleguide](https://github.com/styleguide)
+- [Code Guide by @mdo](http://mdo.github.io/code-guide/)
+
 ## Paramètres d'IDE
 Ces configurations permettent de s'assurer d'avoir un rendu consistant sur
 toutes les plateformes et IDE. Ils évitent aussi d'avoir des diff entre deux

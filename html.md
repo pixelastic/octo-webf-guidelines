@@ -1,5 +1,33 @@
 # HTML
 
+## Sémantique
+
+### Ne pas utiliser `<br />` pour séparer des éléments.
+Pour séparer plusieurs groupes de texte, on utilisera des `<p>`. Pour espacer
+des éléments d'interface, on utilisera du CSS.
+
+### Utiliser les balises HTML existantes sémantiques si elles existent.
+Ne pas utiliser d'éléments génériques comme `<div>` ou `<span>` si un élément
+HTML existe déjà pour cette fonction. Utiliser par exemple `<ul>`, `<ol>` ou
+`<dl>` pour une liste, ou `<table>` pour des données tabulaires.
+
+### Tirer profit des balises `<table>` spécifiques.
+`<thead>`, `<tbody>` et `<tfoot>` permettent de définir respectivement le
+header, le body et le footer d'un tableau. Pour des raisons de performance
+d'affichage, il est plus intéressant d'inclure le `<tfoot>` avant le `<tbody>`
+dans le markup.
+
+## Formulaires
+
+### Ne pas mettre de bouton "Reset" sur les formulaires
+Même si dans la spec, complétement inutile. Si le formulaire a besoin d'un tel
+bouton, c'est qu'il est trop complexe.
+
+### Toujours lier des `<label>` aux champs d'input.
+Pour des raisons d'accessibilité, il est important de lier chaque `<input>`,
+`<select>`, `<textarea>`, etc à un élément `<label>` grâce aux attributs `name`
+et `for`.
+
 ## Balises
 
 ### Indenter chaque balise.
