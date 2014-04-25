@@ -23,7 +23,8 @@ Si votre IDE [l'accepte](http://editorconfig.org/), vous trouverez un fichier
 `.editorconfig` dans le dossier `tools/editor`.
 
 ### Indenter avec 2 espaces
-C'est la configuration utilisée par html5boilerplate.
+C'est la configuration utilisée par html5boilerplate. L'important est que tout
+le monde dans le projet utilise la même indentation.
 
 ### Enregistrer les fichier en UTF-8.
 Permet d'assurer la meilleur compatibilité d'encoding. Vérifiez bien que votre
@@ -44,12 +45,16 @@ ligne](http://unix.stackexchange.com/questions/18743/whats-the-point-in-adding-a
 ## Ressources
 - [GitHub styleguide](https://github.com/styleguide)
 - [Code Guide by @mdo](http://mdo.github.io/code-guide/)
+- [Idiomatic.js](https://github.com/rwaldron/idiomatic.js)
+- [Idiomatic CSS](https://github.com/necolas/idiomatic-css)
+- [jQuery styleguide](https://contribute.jquery.org/style-guide/js/)
 - [Configurer Eclipse pour les new lines et les indentations](http://eclipsesource.com/blogs/2013/07/09/invisible-chaos-mastering-white-spaces-in-eclipse/)
 
 
 Todo :
-- nom de classe avec des tirets en css
-- pas d'ids dans les sélecteurs
+- utiliser des id en js, extrémement rapide
+- si behavior commun en js, utiliser des classes js- mais ne pas les styler en
+  css
 - ajouter des styles pour :focus, :active, :hover
 - pas de style dans le js, tout dans le css
 - éviter le HTML dans le js, si nécessaire, utiliser des <script template>
