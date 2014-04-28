@@ -199,6 +199,10 @@ __A développer__
 Existe en commandline, mais avec une syntaxe d'options assez complexe. Ne peux
 pas checker l'indentation (strip newline avant ses vérifications).
 
+### SCSS Lint
+__À développer __
+[https://github.com/causes/scss-lint]
+
 
 
 
