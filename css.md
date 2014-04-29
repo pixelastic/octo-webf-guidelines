@@ -71,6 +71,13 @@ toujours mettre un `focus` là où on mettrai un `:hover`.
 Même si le `;` est facultatif pour la dernière règle, on l'ajoute pour la
 cohérence et pour éviter les copier-coller malheureux.
 
+### Economiser les reflow avec des `border` `transparent`
+Si vous ajoutez un border à un élément lors d'un `:hover`, le browser doit
+effectuer un reflow car les dimensions de l'élément ont changées. Si par contre
+vous changez simplement sa couleur, il n'a qu'un repaint à effectuer. Il est
+donc intéressant de définir l'état de base de l'élément avec un `border`
+`transparent`.
+
 ## Propriétés
 
 ## Valeurs
