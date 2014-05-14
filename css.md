@@ -216,3 +216,9 @@ __À développer __
 ## TODO
 
 - Grouper les règles ? Par ordre alphabétique, par type ?
+- taille de font de base à mettre sur le body, min 14px, utiliser des em
+  ensuite.
+
+
+## Tricks ?
+- centrer du texte verticalement avec un line-height égal au height du parent
