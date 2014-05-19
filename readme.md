@@ -58,3 +58,4 @@ Todo :
 - ajouter des styles pour :focus, :active, :hover
 - pas de style dans le js, tout dans le css
 - éviter le HTML dans le js, si nécessaire, utiliser des <script template>
+- angular style guide : https://github.com/mgechev/angularjs-style-guide
