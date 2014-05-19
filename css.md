@@ -1,5 +1,12 @@
 # CSS
 
+## Fichiers
+
+### Découper les fichiers par modules et non par page
+CSS permet de réutiliser des éléments sur plusieurs pages. Si vous devez
+découper un gros fichier en plusieurs petits, faites la séparation au niveau
+des modules (tabs, formulaire, modal, etc) plutot qu'au niveau des pages.
+
 ## Syntaxe
 
 Il est important de garder une cohérence dans la syntaxe utilisée. Cela permet
@@ -52,9 +59,9 @@ couteux en terme de performances.
 
 ### Préférer les sélecteurs de balise plutot que les sélecteurs de classe
 Un sélecteur de balise est plus rapidement rendu par le navigateur, et sa
-spécificité étant plus basse, il est plus facilement overwritable. De plus,
-cela force à utiliser les balises qui ont du sens sémantiquement dans le
-contexte.
+spécificité étant plus basse, il est plus facilement overwritable. Attention
+toutefois à n'utiliser que des balises qui ont du sens sémantiquement (`label`,
+`address` par exemple mais pas `span` ou `div`).
 
 ### Utiliser des double quotes pour les sélecteurs d'attributs
 Les quotes sont parfois optionnelles pour les selecteurs d'attributs, mais il
@@ -64,46 +71,6 @@ est préférable pour la cohérence de toujours en utiliser.
 Les utilisateurs qui naviguent au clavier ont besoin d'une indication visuelle
 pour leur montrer l'élément actuellement sélectionné. Une bonne pratique est de
 toujours mettre un `focus` là où on mettrai un `:hover`.
-
-## Règles
-
-### Toujours mettre un `;` à la fin des règles.
-Même si le `;` est facultatif pour la dernière règle, on l'ajoute pour la
-cohérence et pour éviter les copier-coller malheureux.
-
-### Economiser les reflow avec des `border` `transparent`
-Si vous ajoutez un border à un élément lors d'un `:hover`, le browser doit
-effectuer un reflow car les dimensions de l'élément ont changées. Si par contre
-vous changez simplement sa couleur, il n'a qu'un repaint à effectuer. Il est
-donc intéressant de définir l'état de base de l'élément avec un `border`
-`transparent`.
-
-## Propriétés
-
-## Valeurs
-
-### Utiliser des majuscules pour les valeurs hexadécimales
-Majuscules ou minuscules sont interprétées de la même manière, mais toujours
-utiliser le même format aide à la cohérence.
-
-    BAD
-    form input[type=radio] { ... }
-
-    GOOD
-    form input[type="radio"] { ... }
-
-
-### Ne pas utiliser d'unités quand on mets une valeur à zéro
-Qu'elle soit en `em`, en `px` ou en `%`, une valeur à zéro sera toujours nulle,
-il est donc inutile de préciser son unité.
-
-     BAD
-     margin:0px;
-     line-height:0em;
-
-     GOOD
-     margin:0;
-     line-height:0;
 
 ## Noms de classes
 
@@ -189,15 +156,63 @@ regrouper sous un nom de classe générique et créer des classes spécifiques q
       padding: 5px;
     }
 
+### Utiliser `js-` pour définir les classes utilisées par javascript
+Séparer les classes de comportement (`js-*`) des classes de style permet de
+pouvoir plus facilement modifier le markup sans gêner les scripts.
+
+## Règles
+
+### Toujours mettre un `;` à la fin des règles.
+Même si le `;` est facultatif pour la dernière règle, on l'ajoute pour la
+cohérence et pour éviter les copier-coller malheureux.
+
+### Economiser les reflow avec des `border` `transparent`
+Si vous ajoutez un border à un élément lors d'un `:hover`, le browser doit
+effectuer un reflow car les dimensions de l'élément ont changées. Si par contre
+vous changez simplement sa couleur, il n'a qu'un repaint à effectuer. Il est
+donc intéressant de définir l'état de base de l'élément avec un `border`
+`transparent`.
+
+## Propriétés
+
+### Groupez les propriétés de manière consistante
+_Les propriétés devraient toujours être listées selon le même ordre, afin de
+faciliter la lecture (et permettre un meilleur gzip). Mais quel ordre choisir
+? Alphabétique ? Type (Positionning, Display, Other)
+
+## Valeurs
+
+### Utiliser des majuscules pour les valeurs hexadécimales
+Majuscules ou minuscules sont interprétées de la même manière, mais toujours
+utiliser le même format aide à la cohérence.
+
+    BAD
+    form input[type=radio] { ... }
+
+    GOOD
+    form input[type="radio"] { ... }
+
+
+### Ne pas utiliser d'unités quand on mets une valeur à zéro
+Qu'elle soit en `em`, en `px` ou en `%`, une valeur à zéro sera toujours nulle,
+il est donc inutile de préciser son unité.
+
+     BAD
+     margin:0px;
+     line-height:0em;
+
+     GOOD
+     margin:0;
+     line-height:0;
+
 ## Outils
 
 ### Recess
-__A développer__
-[http://twitter.github.io/recess/]
-
-Toutes les règles ne sont pas forcément adaptées à nos guidelines. En
-particulier, la règle sur la surqualification de sélecteurs de Recess me
-parait trop stricte. Elle refuse `.btn.active` comme étant trop qualifiée.
+Outil de validation CSS de Twitter ([http://twitter.github.io/recess/]).
+L'outil ne fait pas validation de syntaxe, il faut donc faire attention à le
+passer sur un fichier qui est déjà correct syntaxiquement. Un fichier de
+configuration est disponible dans `./tools`. Il est appeller avec `recess
+--config /path/to/file`.
 
 ### CSSLint
 __A développer__
@@ -215,10 +230,6 @@ __À développer __
 
 ## TODO
 
-- Grouper les règles ? Par ordre alphabétique, par type ?
 - taille de font de base à mettre sur le body, min 14px, utiliser des em
   ensuite.
-
-
-## Tricks ?
 - centrer du texte verticalement avec un line-height égal au height du parent
