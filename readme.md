@@ -53,9 +53,10 @@ ligne](http://unix.stackexchange.com/questions/18743/whats-the-point-in-adding-a
 
 Todo :
 - utiliser des id en js, extrémement rapide
-- si behavior commun en js, utiliser des classes js- mais ne pas les styler en
-  css
 - ajouter des styles pour :focus, :active, :hover
 - pas de style dans le js, tout dans le css
 - éviter le HTML dans le js, si nécessaire, utiliser des <script template>
 - angular style guide : https://github.com/mgechev/angularjs-style-guide
+- ajouter la config git pour forcer la sauvegarde de fichiers en LF plutot que
+  CRLF.
+- ajouter un hook qui empeche de commiter des fichiers qui ne sont pas en utf8
