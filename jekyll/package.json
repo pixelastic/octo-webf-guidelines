@@ -1,0 +1,11 @@
+{
+  "name": "webf-guidelines",
+  "description": "Web front guidelines",
+  "devDependencies": {
+    "glob": "~3.2.9",
+    "grunt": "0.4.4",
+    "grunt-bower-install": "~1.4.0",
+    "load-grunt-tasks": "0.2.1"
+  }
+}
+
