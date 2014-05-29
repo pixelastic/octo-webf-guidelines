@@ -178,7 +178,7 @@ donc intéressant de définir l'état de base de l'élément avec un `border`
 ### Groupez les propriétés de manière consistante
 _Les propriétés devraient toujours être listées selon le même ordre, afin de
 faciliter la lecture (et permettre un meilleur gzip). Mais quel ordre choisir
-? Alphabétique ? Type (Positionning, Display, Other)
+? Alphabétique ? Type (Positionning, Display, Other)_
 
 ## Valeurs
 
@@ -208,28 +208,31 @@ il est donc inutile de préciser son unité.
 ## Outils
 
 ### Recess
-Outil de validation CSS de Twitter ([http://twitter.github.io/recess/]).
+Outil de validation CSS de Twitter (http://twitter.github.io/recess/).
 L'outil ne fait pas validation de syntaxe, il faut donc faire attention à le
 passer sur un fichier qui est déjà correct syntaxiquement. Un fichier de
 configuration est disponible dans `./tools`. Il est appeller avec `recess
 --config /path/to/file`.
 
 ### CSSLint
-__A développer__
-[https://github.com/CSSLint/csslint]
+https://github.com/CSSLint/csslint
 
-Existe en commandline, mais avec une syntaxe d'options assez complexe. Ne peux
-pas checker l'indentation (strip newline avant ses vérifications).
+Existe en module node, ou en ligne de commande en python. Il vérifie la syntaxe
+du fichier CSS avant de tester les règles. Il est possible de configurer les
+règles que l'on souhaite ou non employer, mais la syntaxe pour le faire est peu
+pratique. Les deux implémentations (node et python) ne sont pas identiques.
 
 ### SCSS Lint
 __À développer __
-[https://github.com/causes/scss-lint]
+https://github.com/causes/scss-lint
 
 
 
 
 ## TODO
 
-- taille de font de base à mettre sur le body, min 14px, utiliser des em
+  - taille de font de base à mettre sur le body, min 14px, utiliser des em
   ensuite.
-- centrer du texte verticalement avec un line-height égal au height du parent
+  - centrer du texte verticalement avec un line-height égal au height du parent
+
+

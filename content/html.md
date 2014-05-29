@@ -48,7 +48,8 @@ Exemple :
     </ul>
 
 ### Toujours en minuscule.
-Pour l'uniformité. Seul le `<!DOCTYPE html>` est une exception à la règle.
+Pour l'uniformité, toujours écrire les balises en minuscule. Seul le `<!DOCTYPE
+html>` est une exception à la règle.
 
 ### Toujours fermer les balises.
 Même si certaines balises comme `<body>`, `<li>`, `<dt>` ou `<dd>` peuvent ne
@@ -204,7 +205,7 @@ Si vous utilisez vim, vous pouvez ajouter ces lignes à votre `~/.vim/after/ftpl
     setlocal softtabstop=2
     setlocal expandtab
 
-### Outils
+## Outils
 
 Le W3C avait mis à disposition [htmltidy](http://tidy.sourceforge.net/), un
 outil pour tester la syntaxe et nettoyer un fichier `html`. Un fork a depuis vu
