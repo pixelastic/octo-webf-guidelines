@@ -6,3 +6,6 @@ bower install
 
 grunt build
 jekyll build
+
+cd ..
+git subtree push --prefix gh-pages origin gh-pages

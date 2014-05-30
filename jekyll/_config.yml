@@ -1,6 +1,6 @@
 name: Guidelines de développement front web
 
-destination: ../dist
+destination: ../gh-pages
 source:      ./dist
 layouts:     ./_layouts
 plugins:     ./_plugins
