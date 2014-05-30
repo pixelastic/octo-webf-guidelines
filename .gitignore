@@ -1,4 +1,6 @@
 /dist
-bower_components
-node_modules
+/jekyll/bower_components
+/jekyll/node_modules
+/jekyll/.tmp
+/jekyll/dist
 
