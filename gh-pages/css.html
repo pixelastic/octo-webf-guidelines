@@ -1,0 +1,283 @@
+<!doctype html>
+<html class="no-js" lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Guidelines de développement front web - CSS</title>
+  <meta name="description" content="Guidelines de dévelopement front web.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="css/main.css"/>
+</head>
+
+<body>
+  <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+      <ul class="nav navbar-nav">
+        <li><a href="index.html">Index</a></li>
+        <li class="html"><a href="html.html">HTML</a></li>
+        <li class="css"><a href="css.html">CSS</a></li>
+        <li class="javascript"><a href="javascript.html">Javascript</a></li>
+      </ul>
+    </div>
+  </div>
+
+    <div class="container page-css">
+  <h1 id="css">CSS</h1>
+
+<h2 id="fichiers">Fichiers</h2>
+
+<h3 id="dcouper-les-fichiers-par-modules-et-non-par-page">Découper les fichiers par modules et non par page</h3>
+<p>CSS permet de réutiliser des éléments sur plusieurs pages. Si vous devez
+découper un gros fichier en plusieurs petits, faites la séparation au niveau
+des modules (tabs, formulaire, modal, etc) plutot qu’au niveau des pages.</p>
+
+<h2 id="syntaxe">Syntaxe</h2>
+
+<p>Il est important de garder une cohérence dans la syntaxe utilisée. Cela permet
+de scanner visuellement le document beaucoup plus rapidement et aide à la
+maintenabilité.</p>
+
+<p>La syntaxe recommandée est la suivante :</p>
+
+<pre><code>ul li a.active,
+ul li a:hover {
+  text-decoration: none;
+  color: #FFFFFF;
+}
+</code></pre>
+
+<ul>
+  <li>Un seul sélecteur par ligne</li>
+  <li>Mettre <code>{</code> sur la ligne du sélecteur, précédée d’un espace</li>
+  <li>Mettre le <code>}</code> sur sa propre ligne</li>
+  <li>Une seule règle par ligne</li>
+  <li>Mettre un espace après le <code>:</code> mais pas avant</li>
+</ul>
+
+<dl>
+  <dt>_Exceptions : Pour les sélecteurs uniques, qui ne comportent qu’une seule</dt>
+  <dt>règle, on peut les mettre sur une ligne pour améliorer la lisibilité. Exemple</dt>
+  <dd>`.span1 { width: 60px; }_</dd>
+</dl>
+
+<h2 id="slecteurs">Sélecteurs</h2>
+
+<h3 id="ne-pas-utiliser-did">Ne pas utiliser d’id</h3>
+<p>Les ids ne peuvent être utilisés qu’une seule fois dans une page, rendant leur
+style très peu mutualisable. De plus, ils ont une spécificité plus forte que
+les classes rendant leur overwrite plus difficile.</p>
+
+<h3 id="ne-pas-surqualifer-les-slecteurs">Ne pas surqualifer les sélecteurs</h3>
+<p>Plus un sélecteur est qualifié, plus il est difficile à overwriter et donc
+moins il est mutualisable. Il faut supprimer les surqualifications de ses
+sélecteurs autant que possible.</p>
+
+<pre><code>BAD
+table.my-table thead &gt; th {
+  background: grey;
+}
+
+GOOD
+.my-table th {
+  background: grey;
+}
+</code></pre>
+
+<h3 id="ne-pas-utiliser-le-slecteur-universel-">Ne pas utiliser le sélecteur universel <code>*</code></h3>
+<p>Ce sélecteur va matcher absolument toutes les balises de la page et est très
+couteux en terme de performances.</p>
+
+<h3 id="prfrer-les-slecteurs-de-balise-plutot-que-les-slecteurs-de-classe">Préférer les sélecteurs de balise plutot que les sélecteurs de classe</h3>
+<p>Un sélecteur de balise est plus rapidement rendu par le navigateur, et sa
+spécificité étant plus basse, il est plus facilement overwritable. Attention
+toutefois à n’utiliser que des balises qui ont du sens sémantiquement (<code>label</code>,
+<code>address</code> par exemple mais pas <code>span</code> ou <code>div</code>).</p>
+
+<h3 id="utiliser-des-double-quotes-pour-les-slecteurs-dattributs">Utiliser des double quotes pour les sélecteurs d’attributs</h3>
+<p>Les quotes sont parfois optionnelles pour les selecteurs d’attributs, mais il
+est préférable pour la cohérence de toujours en utiliser.</p>
+
+<h3 id="sassurer-de-la-prsence-de-styles-focus">S’assurer de la présence de styles <code>:focus</code></h3>
+<p>Les utilisateurs qui naviguent au clavier ont besoin d’une indication visuelle
+pour leur montrer l’élément actuellement sélectionné. Une bonne pratique est de
+toujours mettre un <code>focus</code> là où on mettrai un <code>:hover</code>.</p>
+
+<h2 id="noms-de-classes">Noms de classes</h2>
+
+<h3 id="utiliser-des-traits-dunion-plutot-que-du-camelcase-ou-des-underscores">Utiliser des traits d’union plutot que du camelCase ou des underscores</h3>
+<p>C’est la convention déjà utilisée par des projets comme Bootstrap ou
+HTML5Boilerplate.</p>
+
+<h3 id="utiliser-des-noms-qui-refltent-la-fonction-de-llment">Utiliser des noms qui reflètent la fonction de l’élément</h3>
+<p>Le nom de la classe doit refléter la fonction de l’élement, et non pas la
+manière dont il est représenté.</p>
+
+<pre><code>BAD
+.big-red-button {
+  color: red;
+}
+
+GOOD
+.button-warning {
+  color: red;
+}
+</code></pre>
+
+<h3 id="ne-pas-laisser-les-abbrviations-masquer-le-sens-de-la-classe">Ne pas laisser les abbréviations masquer le sens de la classe</h3>
+<p>La fonction d’une classe doit être facilement compréhensible par un nouveau
+développeur à partir de son nom.</p>
+
+<pre><code>BAD
+.ma {
+  ...
+}
+
+GOOD
+.article-main {
+  ...
+}
+</code></pre>
+
+<h3 id="utiliser-des-classes-tendables-et-rutilisables">Utiliser des classes étendables et réutilisables</h3>
+<p>Si plusieurs éléments partagent des styles comment, il faut essayer de les
+regrouper sous un nom de classe générique et créer des classes spécifiques qui
+étendent cette classe principale pour les cas particuliers.</p>
+
+<pre><code>BAD
+&lt;button class="button-valid"&gt;Ok&lt;/button&gt;
+&lt;button class="button-cancel"&gt;Cancel&lt;/button&gt;
+&lt;button class="button-back"&gt;Back&lt;/button&gt;
+
+.button-valid {
+  width: 140px;
+  padding: 10px;
+  margin-right: 5px;
+  background: green;
+}
+.button-cancel {
+  width: 140px;
+  padding: 10px;
+  margin-right: 5px;
+  background: red;
+}
+.button-back {
+  width: 60px;
+  padding: 5px;
+  margin-right: 5px;
+  background: green;
+}
+
+GOOD
+&lt;button class="button button-valid"&gt;Ok&lt;/button&gt;
+&lt;button class="button button-cancel"&gt;Cancel&lt;/button&gt;
+&lt;button class="button button-small"&gt;Back&lt;/button&gt;
+
+.button {
+  width: 140px;
+  padding: 10px;
+  margin-right: 5px;
+}
+.button-cancel {
+  background: red;
+}
+.button-valid {
+  background: green;
+}
+.button-small {
+  width: 60px;
+  padding: 5px;
+}
+</code></pre>
+
+<h3 id="utiliser-js--pour-dfinir-les-classes-utilises-par-javascript">Utiliser <code>js-</code> pour définir les classes utilisées par javascript</h3>
+<p>Séparer les classes de comportement (<code>js-*</code>) des classes de style permet de
+pouvoir plus facilement modifier le markup sans gêner les scripts.</p>
+
+<h2 id="rgles">Règles</h2>
+
+<h3 id="toujours-mettre-un---la-fin-des-rgles">Toujours mettre un <code>;</code> à la fin des règles.</h3>
+<p>Même si le <code>;</code> est facultatif pour la dernière règle, on l’ajoute pour la
+cohérence et pour éviter les copier-coller malheureux.</p>
+
+<h3 id="economiser-les-reflow-avec-des-border-transparent">Economiser les reflow avec des <code>border</code> <code>transparent</code></h3>
+<p>Si vous ajoutez un border à un élément lors d’un <code>:hover</code>, le browser doit
+effectuer un reflow car les dimensions de l’élément ont changées. Si par contre
+vous changez simplement sa couleur, il n’a qu’un repaint à effectuer. Il est
+donc intéressant de définir l’état de base de l’élément avec un <code>border</code>
+<code>transparent</code>.</p>
+
+<h2 id="proprits">Propriétés</h2>
+
+<h3 id="groupez-les-proprits-de-manire-consistante">Groupez les propriétés de manière consistante</h3>
+<p><em>Les propriétés devraient toujours être listées selon le même ordre, afin de
+faciliter la lecture (et permettre un meilleur gzip). Mais quel ordre choisir
+? Alphabétique ? Type (Positionning, Display, Other)</em></p>
+
+<h2 id="valeurs">Valeurs</h2>
+
+<h3 id="utiliser-des-majuscules-pour-les-valeurs-hexadcimales">Utiliser des majuscules pour les valeurs hexadécimales</h3>
+<p>Majuscules ou minuscules sont interprétées de la même manière, mais toujours
+utiliser le même format aide à la cohérence.</p>
+
+<pre><code>BAD
+form input[type=radio] { ... }
+
+GOOD
+form input[type="radio"] { ... }
+</code></pre>
+
+<h3 id="ne-pas-utiliser-dunits-quand-on-mets-une-valeur--zro">Ne pas utiliser d’unités quand on mets une valeur à zéro</h3>
+<p>Qu’elle soit en <code>em</code>, en <code>px</code> ou en <code>%</code>, une valeur à zéro sera toujours nulle,
+il est donc inutile de préciser son unité.</p>
+
+<pre><code> BAD
+ margin:0px;
+ line-height:0em;
+
+ GOOD
+ margin:0;
+ line-height:0;
+</code></pre>
+
+<h2 id="outils">Outils</h2>
+
+<h3 id="recess">Recess</h3>
+<p>Outil de validation CSS de Twitter (http://twitter.github.io/recess/).
+L’outil ne fait pas validation de syntaxe, il faut donc faire attention à le
+passer sur un fichier qui est déjà correct syntaxiquement. Un fichier de
+configuration est disponible dans <code>./tools</code>. Il est appeller avec <code>recess
+--config /path/to/file</code>.</p>
+
+<h3 id="csslint">CSSLint</h3>
+<p>https://github.com/CSSLint/csslint</p>
+
+<p>Existe en module node, ou en ligne de commande en python. Il vérifie la syntaxe
+du fichier CSS avant de tester les règles. Il est possible de configurer les
+règles que l’on souhaite ou non employer, mais la syntaxe pour le faire est peu
+pratique. Les deux implémentations (node et python) ne sont pas identiques.</p>
+
+<h3 id="scss-lint">SCSS Lint</h3>
+<p>__À développer __
+https://github.com/causes/scss-lint</p>
+
+<h2 id="todo">TODO</h2>
+
+<ul>
+  <li>taille de font de base à mettre sur le body, min 14px, utiliser des em
+  ensuite.</li>
+  <li>centrer du texte verticalement avec un line-height égal au height du parent</li>
+</ul>
+
+
+</div>
+
+
+  <script src="js/main.js"></script>
+</body>
+
+</html>
+
+
+
+
