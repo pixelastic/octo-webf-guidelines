@@ -1,0 +1,106 @@
+<!doctype html>
+<html class="no-js" lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Guidelines de développement front web - Index</title>
+  <meta name="description" content="Guidelines de dévelopement front web.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="css/main.css"/>
+</head>
+
+<body>
+  <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+      <ul class="nav navbar-nav">
+        <li><a href="index.html">Index</a></li>
+        <li class="html"><a href="html.html">HTML</a></li>
+        <li class="css"><a href="css.html">CSS</a></li>
+        <li class="javascript"><a href="javascript.html">Javascript</a></li>
+      </ul>
+    </div>
+  </div>
+
+    <div class="container page-index">
+  <h1 id="guidelines-pour-les-dveloppeurs-front-end">Guidelines pour les développeurs front-end</h1>
+
+<p>Ces guidelines ont pour but de permettre aux développeurs front d’avoir un
+ensemble de conventions partagées qui peuvent être réutilisées de projet en
+projet.</p>
+
+<p>Ces conventions ne sont pas faites pour être appliquées à la lettre et vous
+êtes invités à les discuter et les modifier pour vos propres projets. </p>
+
+<p>La seule règle capitale est que tous les développeurs doivent suivre les mêmes
+convention. Le code dans son ensemble doit sembler avoir été écrit par la même
+personne.</p>
+
+<h2 id="paramtres-dide">Paramètres d’IDE</h2>
+<p>Ces configurations permettent de s’assurer d’avoir un rendu consistant sur
+toutes les plateformes et IDE. Ils évitent aussi d’avoir des diff entre deux
+versions à chaque fois qu’un fichier est enregistré sur un poste différent.</p>
+
+<p>La majorité des IDE permettent de configurer ces options. Si votre IDE ne le
+permet pas, changez d’IDE.</p>
+
+<p>Si votre IDE <a href="http://editorconfig.org/">l’accepte</a>, vous trouverez un fichier
+<code>.editorconfig</code> dans le dossier <code>tools/editor</code>.</p>
+
+<h3 id="indenter-avec-2-espaces">Indenter avec 2 espaces</h3>
+<p>C’est la configuration utilisée par html5boilerplate. L’important est que tout
+le monde dans le projet utilise la même indentation.</p>
+
+<h3 id="enregistrer-les-fichier-en-utf-8">Enregistrer les fichier en UTF-8.</h3>
+<p>Permet d’assurer la meilleur compatibilité d’encoding. Vérifiez bien que votre
+IDE n’ajoute pas de <a href="http://en.wikipedia.org/wiki/Byte_order_mark">BOM</a>.</p>
+
+<h3 id="utiliser-le-dlimiteur-de-new-line-unix-lf">Utiliser le délimiteur de new line Unix (LF).</h3>
+<p>Le <a href="http://blog.codinghorror.com/the-great-newline-schism/">séparateur</a> Unix
+(LF) est utilisé par html5boilerplate. Il utilise moins de bytes que le
+séparateur Windows et est plus répandu que le séparateur Mac.</p>
+
+<h3 id="ne-pas-laisser-despaces-en-fin-de-ligne">Ne pas laisser d’espaces en fin de ligne.</h3>
+<p>Ces caractères sont inutiles.</p>
+
+<h3 id="ajouter-un-saut-de-ligne-en-fin-de-fichier">Ajouter un saut de ligne en fin de fichier.</h3>
+<p>Ou plutot, <a href="http://unix.stackexchange.com/questions/18743/whats-the-point-in-adding-a-new-line-to-the-end-of-a-file">ne pas supprimer le saut de
+ligne</a>  qui devrait y être.</p>
+
+<h2 id="ressources">Ressources</h2>
+<ul>
+  <li><a href="https://github.com/styleguide">GitHub styleguide</a></li>
+  <li><a href="http://mdo.github.io/code-guide/">Code Guide by @mdo</a> (<a href="https://pixelastic.github.io/code-guide/">version
+française</a>)</li>
+  <li><a href="https://github.com/rwaldron/idiomatic.js">Idiomatic.js</a></li>
+  <li><a href="https://github.com/necolas/idiomatic-css">Idiomatic CSS</a></li>
+  <li><a href="https://contribute.jquery.org/style-guide/js/">jQuery styleguide</a></li>
+  <li><a href="http://eclipsesource.com/blogs/2013/07/09/invisible-chaos-mastering-white-spaces-in-eclipse/">Configurer Eclipse pour les new lines et les indentations</a></li>
+</ul>
+
+<h2 id="todo">Todo</h2>
+
+<ul>
+  <li>utiliser des id en js, extrémement rapide</li>
+  <li>ajouter des styles pour :focus, :active, :hover</li>
+  <li>pas de style dans le js, tout dans le css</li>
+  <li>éviter le HTML dans le js, si nécessaire, utiliser des <script template=""></script></li>
+  <li>angular style guide : https://github.com/mgechev/angularjs-style-guide</li>
+  <li>ajouter la config git pour forcer la sauvegarde de fichiers en LF plutot que
+CRLF.</li>
+  <li>ajouter un hook qui empeche de commiter des fichiers qui ne sont pas en utf8</li>
+</ul>
+
+
+</div>
+
+
+
+  <script src="js/main.js"></script>
+</body>
+
+</html>
+
+
+
+

@@ -1,0 +1,265 @@
+<!doctype html>
+<html class="no-js" lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Guidelines de développement front web - HTML</title>
+  <meta name="description" content="Guidelines de dévelopement front web.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="css/main.css"/>
+</head>
+
+<body>
+  <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+      <ul class="nav navbar-nav">
+        <li><a href="index.html">Index</a></li>
+        <li class="html"><a href="html.html">HTML</a></li>
+        <li class="css"><a href="css.html">CSS</a></li>
+        <li class="javascript"><a href="javascript.html">Javascript</a></li>
+      </ul>
+    </div>
+  </div>
+
+    <div class="container page-html">
+  <h1 id="html">HTML</h1>
+
+<h2 id="smantique">Sémantique</h2>
+
+<h3 id="ne-pas-utiliser-br--pour-sparer-des-lments">Ne pas utiliser <code>&lt;br /&gt;</code> pour séparer des éléments.</h3>
+<p>Pour séparer plusieurs groupes de texte, on utilisera des <code>&lt;p&gt;</code>. Pour espacer
+des éléments d’interface, on utilisera du CSS.</p>
+
+<h3 id="utiliser-les-balises-html-existantes-smantiques-si-elles-existent">Utiliser les balises HTML existantes sémantiques si elles existent.</h3>
+<p>Ne pas utiliser d’éléments génériques comme <code>&lt;div&gt;</code> ou <code>&lt;span&gt;</code> si un élément
+HTML existe déjà pour cette fonction. Utiliser par exemple <code>&lt;ul&gt;</code>, <code>&lt;ol&gt;</code> ou
+<code>&lt;dl&gt;</code> pour une liste, ou <code>&lt;table&gt;</code> pour des données tabulaires.</p>
+
+<h3 id="tirer-profit-des-balises-table-spcifiques">Tirer profit des balises <code>&lt;table&gt;</code> spécifiques.</h3>
+<p><code>&lt;thead&gt;</code>, <code>&lt;tbody&gt;</code> et <code>&lt;tfoot&gt;</code> permettent de définir respectivement le
+header, le body et le footer d’un tableau. Pour des raisons de performance
+d’affichage, il est plus intéressant d’inclure le <code>&lt;tfoot&gt;</code> avant le <code>&lt;tbody&gt;</code>
+dans le markup.</p>
+
+<h2 id="formulaires">Formulaires</h2>
+
+<h3 id="ne-pas-mettre-de-bouton-reset-sur-les-formulaires">Ne pas mettre de bouton “Reset” sur les formulaires</h3>
+<p>Même si dans la spec, complétement inutile. Si le formulaire a besoin d’un tel
+bouton, c’est qu’il est trop complexe.</p>
+
+<h3 id="toujours-lier-des-label-aux-champs-dinput">Toujours lier des <code>&lt;label&gt;</code> aux champs d’input.</h3>
+<p>Pour des raisons d’accessibilité, il est important de lier chaque <code>&lt;input&gt;</code>,
+<code>&lt;select&gt;</code>, <code>&lt;textarea&gt;</code>, etc à un élément <code>&lt;label&gt;</code> grâce aux attributs <code>name</code>
+et <code>for</code>.</p>
+
+<h2 id="balises">Balises</h2>
+
+<h3 id="indenter-chaque-balise">Indenter chaque balise.</h3>
+<p>Cela permet de visualiser plus facilement la hiérarchie des différents
+éléments.</p>
+
+<p>Exemple :</p>
+
+<pre><code>&lt;ul&gt;
+  &lt;li&gt;
+    &lt;a href="#"&gt;Lien&lt;/a&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;a href="#"&gt;
+      &lt;span&gt;Another link with a span in it&lt;/span&gt;
+    &lt;/a&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+</code></pre>
+
+<h3 id="toujours-en-minuscule">Toujours en minuscule.</h3>
+<p>Pour l’uniformité, toujours écrire les balises en minuscule. Seul le <code>&lt;!DOCTYPE
+html&gt;</code> est une exception à la règle.</p>
+
+<h3 id="toujours-fermer-les-balises">Toujours fermer les balises.</h3>
+<p>Même si certaines balises comme <code>&lt;body&gt;</code>, <code>&lt;li&gt;</code>, <code>&lt;dt&gt;</code> ou <code>&lt;dd&gt;</code> peuvent ne
+pas être fermées, le faire permet de mieux visualiser l’imbrication des
+éléments.</p>
+
+<h3 id="ajouter-un--de-fermeture-pour-les-self-closing-tags">Ajouter un <code>/&gt;</code> de fermeture pour les self-closing tags.</h3>
+<p>Même si ajouter <code>/&gt;</code> est facultatif sur ces éléments, l’ajouter démontre bien
+l’intention et non pas qu’on a oublié de fermer un tag.</p>
+
+<p>Exemples :</p>
+
+<pre><code>&lt;img src="img.jpg"&gt; BAD
+&lt;img src="img.jpg /&gt; GOOD
+
+&lt;br&gt; BAD
+&lt;br /&gt; GOOD
+</code></pre>
+
+<h3 id="utiliser-un-minimum-de-balises">Utiliser un minimum de balises.</h3>
+<p>Tirez profit du fait qu’on puisse ajouter plusieurs classes CSS à un même
+élément pour éviter d’ajouter des balises <code>&lt;span&gt;</code> ou <code>&lt;div&gt;</code> inutiles.</p>
+
+<pre><code>NOT SO GOOD
+&lt;div class="avatar"&gt;
+  &lt;img src="img.jpg" /&gt;
+&lt;/div&gt;
+
+BETTER
+&lt;img src="img.jpg" class="avatar" /&gt;
+</code></pre>
+
+<h2 id="attributs">Attributs</h2>
+
+<h3 id="toujours-en-minuscule-1">Toujours en minuscule.</h3>
+<p>Pour l’uniformité.</p>
+
+<h3 id="utiliser-des-double-quotes">Utiliser des double quotes.</h3>
+<p>Cela nous permet d’utiliser des single quotes dans le javascript et de pouvoir
+ainsi écrire du javascript dans un attribut html et du html dans une string
+javascript.</p>
+
+<h3 id="ne-pas-ajouter-de-valeurs-aux-attributs-de-type-booleens">Ne pas ajouter de valeurs aux attributs de type booleens.</h3>
+<p>Il est inutile d’ajouter une valeur aux attributs booléens, leur présence
+signifie <code>true</code> et leur absence <code>false</code>.</p>
+
+<pre><code>&lt;input type="text" disabled="disabled" /&gt; BAD
+&lt;input type="text" disabled /&gt; GOOD
+</code></pre>
+
+<h3 id="questions-ouvertes">Questions ouvertes</h3>
+<p><em>Quid de l’ordre des attributs ? Avoir les attributs toujours dans le même
+ordre aide à la cohérence mais aussi à la compression gzip. Quel ordre
+privilégier ? Alphabétiques ou par type ?</em></p>
+
+<h2 id="url">URL</h2>
+
+<h3 id="utiliser-des-adresses-relatives">Utiliser des adresses relatives.</h3>
+<p>On privilegiera les urls de la forme <code>path/to/page.html</code> aux urls
+<code>http://www.site.com/path/to/page.html</code> dans les attributs (<code>href</code> pour <code>a</code>,
+<code>src</code> pour <code>script</code>, etc).</p>
+
+<p>On pourra bien sur utiliser les urls absolues si on pointe vers un autre domaine.</p>
+
+<p>Les syntaxes <code>href="./path/to/page.html"</code> et <code>href="path/to/file.html"</code> étant
+équivalentes, on préferera la seconde car elle est plus succinte.</p>
+
+<p>Si on doit utiliser des adresses absolues (limitation du CMS, profondeur de
+lien trop complexe), on utilisera la syntaxe <code>//</code>, qui permet d’utiliser
+<code>https</code> ou <code>http</code> en fonction du contexte.</p>
+
+<p>Exemple :</p>
+
+<pre><code>&lt;a href="http://www.site.com/path/to/file.html"&gt;Lien&lt;/a&gt; BAD
+&lt;a href="/path/to/file.html"&gt;Lien&lt;/a&gt; BAD
+&lt;a href="./path/to/file.html"&gt;Lien&lt;/a&gt; BAD
+
+&lt;a href="path/to/file.html"&gt;Lien&lt;/a&gt; GOOD
+&lt;a href="//www.site.com/path/to/file.html"&gt;Lien&lt;/a&gt; GOOD
+</code></pre>
+
+<h2 id="images">Images</h2>
+
+<h3 id="toujours-mettre-un-attribut-alt">Toujours mettre un attribut <code>alt</code>.</h3>
+<p>Pour l’accessibilité, cela permet aux terminaux qui ne peuvent pas afficher
+d’image d’avoir une information sur le contenu de l’image.</p>
+
+<h2 id="compatibilit">Compatibilité</h2>
+
+<h3 id="toujours-utiliser-le-doctype-html5">Toujours utiliser le doctype HTML5.</h3>
+<p>Cela nous permet d’avoir la plus grande cohérence de rendu sur l’ensemble des
+navigateurs.</p>
+
+<h3 id="toujours-dire--ie-dutiliser-la-dernire-version-de-son-moteur-de-rendu">Toujours dire à IE d’utiliser la dernière version de son moteur de rendu.</h3>
+<p>L’ajout de la <a href="http://stackoverflow.com/questions/6771258/whats-the-difference-if-meta-http-equiv-x-ua-compatible-content-ie-edge-e">balise
+suivante</a>
+indique à IE d’utiliser la dernière version de son moteur de rendu. Sans cette
+balise, il utilisera un fallback de compatibilité moins performant.</p>
+
+<pre><code>&lt;meta http-equiv="X-UA-Compatible" content="IE=Edge"&gt;
+</code></pre>
+
+<h3 id="toujours-utiliser-de-lutf-8">Toujours utiliser de l’UTF-8.</h3>
+<p>En plus d’avoir les fichiers html encodés en UTF-8 et le serveur qui les envoie
+en précisant <code>Content-Type: text/html; charset=utf-8</code>, il est important
+d’indiquer dans le <code>&lt;head&gt;</code> que la page est en UTF-8 avec la balise suivante :</p>
+
+<pre><code>&lt;meta charset="UTF-8"&gt;
+</code></pre>
+
+<h2 id="css">CSS</h2>
+
+<h3 id="inclure-les-feuilles-de-style-en-haut-de-page">Inclure les feuilles de style en haut de page.</h3>
+<p>Inclure les feuilles de style en haut de page permet au navigateur d’afficher
+la mise en forme plus rapidement et d’éviter un
+<a href="http://fr.wikipedia.org/wiki/FOUC">FOUC</a>.</p>
+
+<p>Note : <em>Il peut parfois être nécessaire de déroger à cette règle en incluant les
+feuilles de style secondaires en bas de page pour optimiser le temps de rendu
+des styles principaux.</em></p>
+
+<h3 id="ne-pas-ajouter-lattribut-typetextcss-sur-les-balises-link">Ne pas ajouter l’attribut <code>type="text/css"</code> sur les balises <code>&lt;link&gt;</code>.</h3>
+<p>Le type par défaut de la balise <code>&lt;link&gt;</code> est déjà <code>text/css</code>, il est inutile de
+l’ajouter.</p>
+
+<h3 id="ne-jamais-utiliser-la-balise-style">Ne jamais utiliser la balise <code>&lt;style&gt;</code>.</h3>
+<p>Le css doit être chargé depuis un fichier CSS externe. En ajouter dans une
+balise <code>&lt;style&gt;</code> dans le HTML rends sa maintenabilité beaucoup plus difficile.</p>
+
+<h3 id="ne-jamais-utiliser-lattribut-style">Ne JAMAIS utiliser l’attribut <code>style</code>.</h3>
+<p>Une règle CSS ajoutée depuis l’attribut <code>style</code> a la priorité la plus haute et
+ne peux alors jamais être overridée par une feuille de style externe.</p>
+
+<h2 id="javascript">Javascript</h2>
+
+<h3 id="inclure-les-fichiers-de-scripts-en-bas-de-page">Inclure les fichiers de scripts en bas de page.</h3>
+<p>Le navigateur bloque son execution pendant qu’il télécharge et parse un fichier
+Javascript. En les mettant haut de page, on l’empeche d’afficher le contenu
+tant que le fichier n’est pas complétement chargé. On préfère donc les mettre
+en base de page.</p>
+
+<h3 id="ne-pas-utiliser-de-balise-script-inline">Ne pas utiliser de balise <code>&lt;script&gt;</code> inline.</h3>
+<p>Les fichiers HTML ne devraient contenir que du code HTML, le code Javascript
+devrait se trouver dans des fichiers <code>.js</code> chargés séparemment. En mélangeant
+les deux on rends la maintenabilité plus complexe.</p>
+
+<h3 id="ne-pas-ajouter-lattribut-typetextjavascript-sur-les-balises-script">Ne pas ajouter l’attribut <code>type="text/javascript"</code> sur les balises <code>&lt;script&gt;</code>.</h3>
+<p>Le type par défaut de la balise <code>&lt;script&gt;</code> est déjà <code>text/javascript</code>, il est
+inutile de l’ajouter.</p>
+
+<h2 id="configuration">Configuration</h2>
+
+<h3 id="vim">Vim</h3>
+<p>Si vous utilisez vim, vous pouvez ajouter ces lignes à votre <code>~/.vim/after/ftplugin/html.vim</code></p>
+
+<pre><code>" Deux espaces pour l'indentation
+setlocal tabstop=2
+setlocal shiftwidth=2
+setlocal softtabstop=2
+setlocal expandtab
+</code></pre>
+
+<h2 id="outils">Outils</h2>
+
+<p>Le W3C avait mis à disposition <a href="http://tidy.sourceforge.net/">htmltidy</a>, un
+outil pour tester la syntaxe et nettoyer un fichier <code>html</code>. Un fork a depuis vu
+le jour, qui intègre les nouveautés html5 et offre plus de possibilités de
+configuration, <a href="https://github.com/w3c/tidy-html5">tidy-html5</a>.</p>
+
+<p><code>tidycheck</code>, un wrapper en ruby autour de <code>tidy-html5</code>, présent dans ce
+repository est une ébauche de script qui affiche les erreurs detectées dans un
+fichier html sans chercher à les corriger.</p>
+
+<p>Le package <a href="https://github.com/einars/js-beautify">js-beautify</a>  comporte aussi
+un script <code>html-beautify</code> qui permet de nettoyer un fichier html.</p>
+
+</div>
+
+
+  <script src="js/main.js"></script>
+</body>
+
+</html>
+
+
+
+
