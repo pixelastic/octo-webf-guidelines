@@ -1,5 +1,6 @@
 module.exports = function(grunt) {
   grunt.registerTask('build', [
+    'clean',           // Cleanup .tmp and dist folders
     'wiredep',         // Update all bower dependencies
     'useminPrepare',   // Generate concat and cssmin config
     'concat',          // Concatenate all css and js files into one file in .tmp
