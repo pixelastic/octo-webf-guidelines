@@ -6,10 +6,10 @@ body {
   color:#FFFFFF;
 }
 .navbar-nav .html:hover {
-  background:#81B71A;
+  background:#E34C26;
 }
 .navbar-nav .css:hover {
-  background:#0088CC;
+  background:#3B9ADB;
 }
 .navbar-nav .javascript:hover {
   background:#F9DE4E;
@@ -35,10 +35,10 @@ h1:before {
   left:0;
 }
 .page-html h1:before {
-  background:#81B71A;
+  background:#E34C26;
 }
 .page-css h1:before {
-  background:#0088CC;
+  background:#3B9ADB;
 }
 .page-javascript h1:before {
   background:#F9DE4E;
@@ -51,10 +51,10 @@ h2 {
   font-size:36px;
 }
 .page-css h2 {
-  border-color:#0088CC;
+  border-color:#3B9ADB;
 }
 .page-html h2 {
-  border-color:#81B71A;
+  border-color:#E34C26;
 }
 .page-javascript h2 {
   border-color:#F9DE4E;
