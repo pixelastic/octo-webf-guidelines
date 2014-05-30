@@ -1,8 +1,8 @@
 name: Guidelines de développement front web
 
 destination: ../dist
-source:      ./app
-layouts:     ../_layouts
+source:      ./dist
+layouts:     ./_layouts
 plugins:     ./_plugins
 
 markdown:      kramdown
