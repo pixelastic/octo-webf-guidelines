@@ -8,20 +8,7 @@ module.exports = {
     dependencies: true,
     devDependencies: false,
     exclude: [],
-    fileTypes: {
-      html: {
-        replace: {
-          css: function(filepath) {
-            filepath = filepath.split('/').slice(2).join('/');
-            return '<link rel="stylesheet" href="'+filepath+'">';
-          },
-          js: function(filepath) {
-            filepath = filepath.split('/').slice(2).join('/');
-            return '<script src="'+filepath+'"></script>';
-          }
-        }
-      }
-    },
+    fileTypes: {},
     ignorePath: '',
     overrides: {}
   }
