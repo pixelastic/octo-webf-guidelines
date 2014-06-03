@@ -27,9 +27,9 @@ La syntaxe recommandée est la suivante :
 - Une seule règle par ligne
 - Mettre un espace après le `:` mais pas avant
 
-_Exceptions : Pour les sélecteurs uniques, qui ne comportent qu'une seule
-règle, on peut les mettre sur une ligne pour améliorer la lisibilité. Exemple
-: `.span1 { width: 60px; }_
+Pour les sélecteurs uniques, qui ne comportent qu'une seule règle, on peut les
+mettre sur une ligne pour améliorer la lisibilité. Exemple : `.span1 { width:
+60px; }`
 
 ## Sélecteurs
 
