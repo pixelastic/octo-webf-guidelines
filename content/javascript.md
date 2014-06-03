@@ -15,6 +15,13 @@ toujours les ajouter.
 Cela nous permet de pouvoir utiliser des double quotes dans le HTML et ainsi de
 pouvoir inclure l'un dans l'autre si nécessaire.
 
+### Toujours utiliser `===` pour les égalités
+Javascript possède ce fantastique concept de variables _truthy_ ou _falsy_ qui
+rends les comparaison à base de `==` sujettes à de nombreux effets de bords. Il
+est donc indispensable de tester ses égalités avec `===` qui teste à la fois
+l'égalité des éléments, ainsi que leur type.
+_lien vers vidéo wtfjs_
+
 ### Ne pas ajouter d'espace dans le `()` ou les `[]`
 Ces exemples parlent d'eux-même :
 
@@ -61,6 +68,28 @@ Si vous définissez une variable qui doit être appellée avec l'opérateur `new
 alors mettez la première lettre en majuscule, afin d'identifier clairement que
 c'est un constructeur.
 
+### Définir les variables en haut du bloc où elles sont définies
+Lorsque Javascript s'execute, il remonte les définitions de variables en haut
+du bloc où elles sont définies. Ce mécanisme s'appelle l'hoisting. Pour
+simplifier la lisibilité, il est donc préférable de définir nos variables en
+haut du bloc où elles sont utilisées.
+
+    /* BAD */
+    function foo() {
+      var foo = 'bar';
+      [...]
+      var bar = 'baz'
+    }
+
+    /* GOOD */
+    function foo() {
+      var foo = 'bar';
+      var bar = 'baz';
+    }
+
+Note: Le cours Javascript #3 de CodeSchool, The Hoisting Hills, explique très
+bien ce principe, avec des exemples.
+
 ## Objets
 
 ### Syntaxe de la définition
@@ -86,17 +115,40 @@ Les exceptions sont bien sur pour les clés avec des espaces ou tirets, ou les
 mots réservés. On utilisera aussi la notation `[]` quand la clé est elle-même
 une variable.
 
+## Fonctions
+
+### Self-Invocated Functions (SIF)
+Lorsqu'on utilise une SIF, il est préférable d'entourer la fonction dans des
+parenthèses pour lever le ambiguités et éviter des erreurs lors de la
+minification.
+
+    /* BAD */
+    function() { 
+      alert('bhou');
+    }();
+
+    /* GOOD */
+    (function() {
+      alert('bhou');
+    })();
+
+### Ne pas étendre les prototypes des types natifs
+N'ajoutez jamais de méthodes custom sur les objets natifs (`String`, `Array`,
+`Object`, etc). A la rigueur, si vous devez faire un shim pour un navigateur
+qui n'implémente pas une certaine fonction, vérifier toujours la présence de
+ladite fonction avant de la redéfinir.
+
+## Outils
+
+### JSHint
+JSHint est une version paramétrable de JSLint. Vous trouverez un fichier
+`.jshintrc` dans le dossier `./tools`, à utiliser dans vos projets.
 
 
 
 
 
-- règles jshint
-- wrap SIF in parentheses
-- triple equal
-- pas de & et |
-- do not extend native prototypes
-- allow ternary, if simple case on one line
+
 - définir la var .length dans les boucles for
 - utiliser underscore/lowdash
 - moment pour les dates
