@@ -133,6 +133,11 @@ Exemple :
 Pour l'accessibilité, cela permet aux terminaux qui ne peuvent pas afficher
 d'image d'avoir une information sur le contenu de l'image.
 
+### N'utiliser `<img>` que pour des images de contenu
+Seules les images qui apportent un contenu à la page (comme une illustration)
+doivent utiliser des balises `<img>`. Toutes les images de présentation
+(bulletpoint, icone, etc) doivent trouver leur place dans le CSS.
+
 ## Compatibilité
 
 ### Toujours utiliser le doctype HTML5.

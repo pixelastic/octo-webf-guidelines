@@ -205,6 +205,45 @@ il est donc inutile de préciser son unité.
      margin:0;
      line-height:0;
 
+## Icones
+
+### Sprites ou Fonts ?
+Pour afficher des icones, il existe deux méthodes principales en CSS : les
+sprites, ou les fonts d'icônes. Globalement les sprites offrent une meilleure
+compatibilité mais sont plus fragiles alors que les fonts restent une feature
+jeune mais offrant plus de flexibilité.
+
+#### Sprite
+Un sprite est une image qui contient toutes les icones que l'on veut utiliser.
+Il suffit ensuite de jouer avec les `background-position` pour afficher l'icone
+que l'on souhaite. En cumulant toutes les icones en une seule image, on
+économise sur les requetes HTTP.
+
+Générer des sprites à la main et mettre à jour le fichier CSS correspondant est
+complexe. Heureusement il existe des outils [en
+ligne](http://www.spritecow.com/) ou en [tache
+grunt](https://www.npmjs.org/package/grunt-sprite-generator) pour nous
+faciliter la tâche.
+
+Les sprites sont très dépendants des dimensions de l'élément où ils sont
+utilisés. Si l'élément grandit (suite à un texte plus long, une taille de
+police augmentée, un zoom dans le navigateur), alors des problèmes d'affichage
+peuvent apparaitre. Le plus fréquent est l'affichage de plusieurs icônes, les
+`background-position` n'étant plus correctement alignés.
+
+#### Icon fonts
+Les fonts d'icones sont des fonts custom qui définissent des icones pour
+certains caractères. Étant considérés comme du texte, elles peuvent être stylés
+en CSS (taille, couleur, etc). Il faut toutefois les limiter à des icones d'une
+seule couleur.
+
+On priviligiera les fonts qui mappent des codes UTF-8 existants vers les icones
+correspondantes, pour faciliter l'accessibilité. Pour les icones qui n'existent pas en UTF-8 (RSS, Twitter,
+GitHub, etc) on peut utiliser une custom font et
+[unicode-range](https://developer.mozilla.org/en-US/docs/Web/CSS/unicode-range).
+
+
+
 ## Outils
 
 ### Recess
