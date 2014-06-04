@@ -138,25 +138,52 @@ N'ajoutez jamais de méthodes custom sur les objets natifs (`String`, `Array`,
 qui n'implémente pas une certaine fonction, vérifier toujours la présence de
 ladite fonction avant de la redéfinir.
 
+
+## Templating
+
+### Ne pas utiliser de HTML dans le Javascript
+Mettre du HTML en dur dans du Javascript vous empêche de profiter des fonctions
+de vérification de syntaxe ou de linting de votre IDE.
+
+Essayez au maximum de garder le markup HTML dans des fichiers HTML (soit en les
+chargeant en asynchrone, soit en définissant des templates dans la page avec
+`<script language="template"></script>`.
+
+### Ne pas définir de styles directement en Javascript
+Ajouter des styles aux éléments du DOM manuellement depuis le Javascript est
+similaire à utiliser l'attribut `style` dans le HTML : les styles ainsi
+appliqués ont la précédence sur ce qui peut être défini sur le Javascript.
+
+Si possible, ajoutez ou supprimez plutot des classes CSS sur l'élément.
+
+
+## Tips and Tricks
+
+### Définir la borne haute dans une boucle for
+Si vous avez besoin d'effectuer une boucle `for`, pensez à extraire la borne
+haute de la boucle dans une variable.
+
+    /* BAD */
+    for (var i = 0; i != myArray.length; i++) {
+    }
+
+    /* GOOD */
+    for (var i = 0, max = myArray.length; i != max; i++) {
+    }
+
 ## Outils
+
+### Utilisez `moment` pour gérer les dates
+Si vous avez besoin de faire le moindre travail sur des dates en Javascript,
+`moment` est la meilleure bibliothèque disponible.
+
+### Utiliser `underscore
+Ces deux bibliothèques ont des syntaxes très proches et ajoutent, entre autres,
+des méthodes d'itération sur les arrays et objects très pratiques, pour éviter
+de faire manuellement des boucles `for`.
+_low-dash est une bonne alternative à underscore sinon_
 
 ### JSHint
 JSHint est une version paramétrable de JSLint. Vous trouverez un fichier
 `.jshintrc` dans le dossier `./tools`, à utiliser dans vos projets.
 
-
-
-
-
-
-- définir la var .length dans les boucles for
-- utiliser underscore/lowdash
-- moment pour les dates
-- pas de html dans le javascript. utiliser des style language="template"
-- pas de style appliqués au dom, mieux utiliser classe (exception pour display
-  hide)
-- var a; var b ou var a, b ?
-
-
-
-Work in progress
