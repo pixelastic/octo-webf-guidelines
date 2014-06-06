@@ -187,3 +187,9 @@ _low-dash est une bonne alternative à underscore sinon_
 JSHint est une version paramétrable de JSLint. Vous trouverez un fichier
 `.jshintrc` dans le dossier `./tools`, à utiliser dans vos projets.
 
+## TODO
+
+- A creuser : [JsCS](https://www.npmjs.org/package/jscs)
+
+
+
