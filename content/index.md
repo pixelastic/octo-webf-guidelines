@@ -50,14 +50,13 @@ ligne](http://unix.stackexchange.com/questions/18743/whats-the-point-in-adding-a
 - [Idiomatic CSS](https://github.com/necolas/idiomatic-css)
 - [jQuery styleguide](https://contribute.jquery.org/style-guide/js/)
 - [Configurer Eclipse pour les new lines et les indentations](http://eclipsesource.com/blogs/2013/07/09/invisible-chaos-mastering-white-spaces-in-eclipse/)
+- [Google's Web Fundamentals and Web Starter Kit](http://googledevelopers.blogspot.fr/2014/06/web-fundamentals-and-web-starter-kit.html)
 
 
 ## Todo
 
 - utiliser des id en js, extrémement rapide
 - ajouter des styles pour :focus, :active, :hover
-- pas de style dans le js, tout dans le css
-- éviter le HTML dans le js, si nécessaire, utiliser des <script template>
 - angular style guide : https://github.com/mgechev/angularjs-style-guide
 - ajouter la config git pour forcer la sauvegarde de fichiers en LF plutot que
   CRLF.

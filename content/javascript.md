@@ -177,19 +177,19 @@ haute de la boucle dans une variable.
 Si vous avez besoin de faire le moindre travail sur des dates en Javascript,
 `moment` est la meilleure bibliothèque disponible.
 
-### Utiliser `underscore
-Ces deux bibliothèques ont des syntaxes très proches et ajoutent, entre autres,
-des méthodes d'itération sur les arrays et objects très pratiques, pour éviter
-de faire manuellement des boucles `for`.
-_low-dash est une bonne alternative à underscore sinon_
+### Utiliser `lodash` ou `underscore`.
+Ces deux bibliothèques exposent la variable `_` en global qui donne accès à un
+sucre syntaxique très pratique (test de type, itération sur collection,
+wrapping de fonctions). Nous recommandons lodash, pour sa compatibilité et ses
+performances.
 
 ### JSHint
 JSHint est une version paramétrable de JSLint. Vous trouverez un fichier
 `.jshintrc` dans le dossier `./tools`, à utiliser dans vos projets.
 
-## TODO
+### JSCS
 
-- A creuser : [JsCS](https://www.npmjs.org/package/jscs)
-
+JavaScript CodeStyle. Complémentaire à JSHint, vous permet de définir avec plus
+de granularité vos conventions de code.
 
 

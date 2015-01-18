@@ -262,16 +262,16 @@ règles que l'on souhaite ou non employer, mais la syntaxe pour le faire est peu
 pratique. Les deux implémentations (node et python) ne sont pas identiques.
 
 ### SCSS Lint
-__À développer __
-https://github.com/causes/scss-lint
+
+Pas testé, [https://github.com/causes/scss-lint](). PR welcome.
 
 
 
 
 ## TODO
 
-  - taille de font de base à mettre sur le body, min 14px, utiliser des em
-  ensuite.
-  - centrer du texte verticalement avec un line-height égal au height du parent
+- Bonne pratique de fixer une font générale sur le texte (potentiellement
+  variable selon les break points), et de jouer sur les `rem` ensuite.
+- Astuces pour centrer verticalement du texte, pour créer des colonnes
 
 
