@@ -164,7 +164,7 @@ Si possible, ajoutez ou supprimez plutot des classes CSS sur l'élément.
 Il est déconseillé d'écrire à la main les boucles d'itération sur les clés d'un
 objet ou les éléments d'un tableau. Utilisez plutot les méthodes d'itération
 (`_.each`, `angular.forEach`, etc) fournies par votre bibliothèque. Vous aurez
-un si un code plus lisible et éviterez pas mal de edge-case.
+ainsi un code plus lisible et éviterez pas mal de edge-case.
 
 ## Outils
 
