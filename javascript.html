@@ -205,21 +205,20 @@ for (var i = 0, max = myArray.length; i != max; i++) {
 <p>Si vous avez besoin de faire le moindre travail sur des dates en Javascript,
 <code>moment</code> est la meilleure bibliothèque disponible.</p>
 
-<h3 id="utiliser-underscore">Utiliser `underscore</h3>
-<p>Ces deux bibliothèques ont des syntaxes très proches et ajoutent, entre autres,
-des méthodes d’itération sur les arrays et objects très pratiques, pour éviter
-de faire manuellement des boucles <code>for</code>.
-<em>low-dash est une bonne alternative à underscore sinon</em></p>
+<h3 id="utiliser-lodash-ou-underscore">Utiliser <code>lodash</code> ou <code>underscore</code>.</h3>
+<p>Ces deux bibliothèques exposent la variable <code>_</code> en global qui donne accès à un
+sucre syntaxique très pratique (test de type, itération sur collection,
+wrapping de fonctions). Nous recommandons lodash, pour sa compatibilité et ses
+performances.</p>
 
 <h3 id="jshint">JSHint</h3>
 <p>JSHint est une version paramétrable de JSLint. Vous trouverez un fichier
 <code>.jshintrc</code> dans le dossier <code>./tools</code>, à utiliser dans vos projets.</p>
 
-<h2 id="todo">TODO</h2>
+<h3 id="jscs">JSCS</h3>
 
-<ul>
-  <li>A creuser : <a href="https://www.npmjs.org/package/jscs">JsCS</a></li>
-</ul>
+<p>JavaScript CodeStyle. Complémentaire à JSHint, vous permet de définir avec plus
+de granularité vos conventions de code.</p>
 
 
 </div>
