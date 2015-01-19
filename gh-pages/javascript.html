@@ -186,18 +186,12 @@ appliqués ont la précédence sur ce qui peut être défini sur le Javascript.<
 
 <h2 id="tips-and-tricks">Tips and Tricks</h2>
 
-<h3 id="dfinir-la-borne-haute-dans-une-boucle-for">Définir la borne haute dans une boucle for</h3>
-<p>Si vous avez besoin d’effectuer une boucle <code>for</code>, pensez à extraire la borne
-haute de la boucle dans une variable.</p>
+<h3 id="lisibilit-des-boucles">Lisibilité des boucles</h3>
 
-<pre><code>/* BAD */
-for (var i = 0; i != myArray.length; i++) {
-}
-
-/* GOOD */
-for (var i = 0, max = myArray.length; i != max; i++) {
-}
-</code></pre>
+<p>Il est déconseillé d’écrire à la main les boucles d’itération sur les clés d’un
+objet ou les éléments d’un tableau. Utilisez plutot les méthodes d’itération
+(<code>_.each</code>, <code>angular.forEach</code>, etc) fournies par votre bibliothèque. Vous aurez
+un si un code plus lisible et éviterez pas mal de edge-case.</p>
 
 <h2 id="outils">Outils</h2>
 

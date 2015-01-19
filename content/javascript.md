@@ -159,17 +159,12 @@ Si possible, ajoutez ou supprimez plutot des classes CSS sur l'élément.
 
 ## Tips and Tricks
 
-### Définir la borne haute dans une boucle for
-Si vous avez besoin d'effectuer une boucle `for`, pensez à extraire la borne
-haute de la boucle dans une variable.
+### Lisibilité des boucles
 
-    /* BAD */
-    for (var i = 0; i != myArray.length; i++) {
-    }
-
-    /* GOOD */
-    for (var i = 0, max = myArray.length; i != max; i++) {
-    }
+Il est déconseillé d'écrire à la main les boucles d'itération sur les clés d'un
+objet ou les éléments d'un tableau. Utilisez plutot les méthodes d'itération
+(`_.each`, `angular.forEach`, etc) fournies par votre bibliothèque. Vous aurez
+un si un code plus lisible et éviterez pas mal de edge-case.
 
 ## Outils
 
